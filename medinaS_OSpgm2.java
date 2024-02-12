@@ -128,7 +128,7 @@ public class medinaS_OSpgm2
 
         double sum = 0;
         
-        for (int x = 0; x < binary.length(); x++)
+        for (int x = binary.length() - 1; x > 0; x--)
         {
             
             if (binary.charAt(x) == '1')
