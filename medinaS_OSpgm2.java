@@ -126,7 +126,7 @@ public class medinaS_OSpgm2
     public static double binaryDec(String binary)
     {
 
-        double result = 0;
+        double sum = 0;
         
         for (int x = 0; x < binary.length(); x++)
         {
@@ -134,7 +134,7 @@ public class medinaS_OSpgm2
             if (binary.charAt(x) == '1')
             {
 
-                result = result + Math.pow(2, binary.length() - 1 - x);
+                sum = sum + Math.pow(2, binary.length() - 1 - x);
                 
                
             }
@@ -142,7 +142,7 @@ public class medinaS_OSpgm2
         
         }
        
-        return result;
+        return sum;
             
     }
 
