@@ -16,109 +16,111 @@
 import java.io.FileReader;
 import java.util.Scanner;
 import java.io.IOException;
-import java.lang.Math;
 public class medinaS_OSpgm2
 {
 
     public static String hexBinary(String reader)
     {
 
-
-        if (reader.contains("0"))
+        for (int x = 0; x < reader.length(); x++)
+        {
+        
+        if (reader.charAt(x) == '0')
         
 
-            reader = reader.replace("0", "0000");
+            reader = "0000";
 
 
-        if (reader.contains("1"))
+        if (reader.charAt(x) == '1')
         
 
-            reader = reader.replace("1", "0001");
+            reader = "0001";
 
         
-        if (reader.contains("2"))
+        if (reader.charAt(x) == '2')
         
 
-            reader = reader.replace("2", "0010");
+            reader = "0010";
 
         
-        if (reader.contains("3"))
+        if (reader.charAt(x) == '3')
         
 
-            reader = reader.replace("3", "0011");
+            reader = "0011";
 
         
-        if (reader.contains("4"))
+        if (reader.charAt(x) == '4')
         
 
-            reader = reader.replace("4", "0100");
+            reader = "0100";
 
         
-        if (reader.contains("5"))
+        if (reader.charAt(x) == '5')
         
 
-            reader = reader.replace("5", "0101");
+            reader = "0101";
 
         
-        if (reader.contains("6"))
+        if (reader.charAt(x) == '6')
         
 
-            reader = reader.replace("6", "0110");
+            reader = "0110";
 
         
-        if (reader.contains("7"))
+        if (reader.charAt(x) == '7')
         
 
-            reader = reader.replace("7", "0111");
+            reader = "0111";
 
         
-        if (reader.contains("8"))
+        if (reader.charAt(x) == '8')
         
 
-            reader = reader.replace("8", "1000");
+            reader = "1000";
 
         
-        if (reader.contains("9"))
+        if (reader.charAt(x) == '9')
         
 
-            reader = reader.replace("9", "1101");
+            reader = "1001";
         
                                               
-        if (reader.contains("A"))
+        if (reader.charAt(x) == 'A')
         
 
-            reader = reader.replace("A", "1010");
+            reader = "1010";
                 
         
-        if (reader.contains("B"))
+        if (reader.charAt(x) == 'B')
         
 
-            reader = reader.replace("B", "1011");
+            reader = "1011";
                 
                    
-        if (reader.contains("C"))
+        if (reader.charAt(x) == 'C')
         
 
-            reader = reader.replace("C", "1100");
+            reader = "1100";
                 
         
-        if (reader.contains("D"))
+        if (reader.charAt(x) == 'D')
         
 
-            reader = reader.replace("D", "1101");
+            reader = "1101";
 
         
-        if (reader.contains("E"))
+        if (reader.charAt(x) == 'E')
         
 
-            reader = reader.replace("E", "1110");
+            reader = "1110";
 
         
-        if (reader.contains("F"))
+        if (reader.charAt(x) == 'F')
         
 
-            reader = reader.replace("F", "1111");
-        
+            reader = "1111";
+
+        }
         return reader;
     
     }
@@ -158,13 +160,13 @@ public class medinaS_OSpgm2
         long decimal;
         FileReader file = new FileReader("RAMerrors8x4f.6");
         Scanner scnr = new Scanner(file);
-        String reader = scnr.nextLine();
+        
 
         System.out.printf("%s\n", "Hex Error    Binary                                     Decimal");
         while (scnr.hasNextLine())
         {
 
-          
+          String reader = scnr.nextLine();
           binary = hexBinary(reader);
           decimal = binaryDec(binary);
 
