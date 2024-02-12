@@ -125,18 +125,21 @@ public class medinaS_OSpgm2
 
     public static double binaryDec(String binary)
     {
-
-        double sum = 0;
+        long temp = 1;
+        long sum = 0;
         
-        for (int x = binary.length() - 1; x > 0; x--)
+        for (int x = binary.length() - 1; x >= 0; x--)
         {
             
             if (binary.charAt(x) == '1')
             {
 
-                sum = sum + Math.pow(2, binary.length() - 1 - x);
-                
-               
+                for(int y = 0; y < binary.length - 1 - x; y++)
+                {
+                    temp = temp * 2;
+                }        
+                sum += temp;
+                temp = 1;
             }
             
         
@@ -152,20 +155,20 @@ public class medinaS_OSpgm2
 
         
         String binary;
-        double decimal;
+        long decimal;
         FileReader file = new FileReader("RAMerrors8x4f.6");
         Scanner scnr = new Scanner(file);
-        
+        String reader = scnr.nextLine();
 
         System.out.printf("%s\n", "Hex Error    Binary                                     Decimal");
         while (scnr.hasNextLine())
         {
 
-          String reader = scnr.nextLine();
+          
           binary = hexBinary(reader);
           decimal = binaryDec(binary);
 
-          System.out.printf("%s = %s = %.0f \n", reader, binary, decimal);  
+          System.out.printf("%s = %s = %d \n", reader, binary, decimal);  
          
           
         }
