@@ -14,6 +14,7 @@
 #include <math.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <string.h>
 
 void processAbsoluteValues(int i, int j, double x, double y)
 {
@@ -225,18 +226,20 @@ void pyramid(char name[], int length)
 {
 
     int count = length;
+    int counterS = 0;
 
     for (int i = 0; i < length / 2; i++)
     {
-       name[i] = name[i + 1];
-       printf("%c", name[i]);
-       count = count - 2;
-       for (int j = length - 1; j > length / 2; j--)
+       printf("%d [", count);
+       for (int j = length - counterS; j > length - counterS; j--)
        (
-           name[j] = name[j - 1];
-           printf("%c", name[j]);
+            
+           printf("%c", name[i]);
+           
        )
-       
+       printf("%s ]", \n);
+       count = count - 2;
+       counterS++;
     }
 
     
