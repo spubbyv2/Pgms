@@ -228,11 +228,13 @@ void pyramid(char name[], int length)
 
     for (int i = 0; i < length / 2; i++)
     {
-       
+       name[i] = name[i + 1];
+       printf("%c", name[i]);
        count = count - 2;
-       for (int j = length; j > length / 2; j--)
+       for (int j = length - 1; j > length / 2; j--)
        (
-
+           name[j] = name[j - 1];
+           printf("%c", name[j]);
        )
        
     }
@@ -310,9 +312,7 @@ void parsing(char name[], int length)
     for (int x = 0; x < length / 2; x++)
     {
 
-        temp = name[x];
-        name[x] = name[length - x - 1];
-        name[length - x - 1] = temp;
+        
     
     }
 
