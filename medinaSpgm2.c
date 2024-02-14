@@ -228,8 +228,12 @@ void pyramid(char name[], int length)
 
     for (int i = 0; i < length / 2; i++)
     {
-
+       
        count = count - 2;
+       for (int j = length; j > length / 2; j--)
+       (
+
+       )
        
     }
 
